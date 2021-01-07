@@ -6,7 +6,6 @@ main() {
 }
 
 @override
-// ignore: camel_case_types
 class H_Reload extends StatelessWidget {
   build(BuildContext b1) {
     return task3();

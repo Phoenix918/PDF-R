@@ -7,51 +7,62 @@ task3() {
   var app = MaterialApp(
     debugShowCheckedModeBanner: false,
     home: Scaffold(
-        backgroundColor: Colors.grey.shade800,
         appBar:AppBar(
-                leading: Icon(Icons.flare, color: Colors.deepOrange.shade700, ),
-                backgroundColor: Colors.grey.shade900,
+                leading: Icon(Icons.flare, color: Color(0xff5e27a4), ),
+                backgroundColor: Color(0xff280a50),
                 title: Center(
-                        child: Text('PDF-R', style: TextStyle(color: Colors.deepOrange.shade700), )),
-                actions: <Widget>[IconButton(icon: Icon(Icons.cached, color: Colors.deepOrange.shade700, ),onPressed: task3)],
+                        child: Text('PDF-R', style: TextStyle(color: Color(0xff5e27a4)), )),
+                actions: <Widget>[IconButton(icon: Icon(Icons.cached, color: Color(0xff5e27a4), ),onPressed: task3)],
         ),
 
-        body:ListView(
-              children: <Widget>[
+        body:Container(
+                height: double.infinity, width: double.infinity,
+                alignment: Alignment.topCenter,
+                child: ListView(
+                  children: <Widget>[
 
-                ListTile(
-                  title: Container(
-                    height: 150,
-                    width: 300,
-                    decoration: BoxDecoration(
-                        color: Colors.grey.shade900,
-                        borderRadius: BorderRadius.circular(20)),
-                    child: Center(
-                      child: Text('PDF-Search', style: TextStyle(color: Colors.deepOrange.shade700, fontSize: 30), ),
+                    ListTile(
+                      title: Container(
+                        height: 150,
+                        width: 150,
+                        decoration: BoxDecoration(
+                            color: Colors.purple.shade900,
+                            borderRadius: BorderRadius.circular(20),
+                            border: Border.all(color: Color(0xff13002c), width: 2.0),
+                            ),
+                        child: Center(
+                        child: Text('PDF-Search', style: TextStyle(color: Color(0xff13002c), fontSize: 40), ),
+                        ),
+                      ),
+                      contentPadding: EdgeInsets.fromLTRB(35, 100, 35, 25),
+                      onTap: output,
                     ),
-                  ),
-                  contentPadding: EdgeInsets.fromLTRB(20, 100, 20, 25),
-                  onTap: output,
-                ),
 
-                Divider(thickness: 1, color: Colors.deepOrange.shade800, indent: 100, endIndent: 100,),
+                  Divider(thickness: 2, color: Color(0xff13002c), indent: 100, endIndent: 100,),
 
-                ListTile(
-                  title: Container(
-                    height: 150,
-                    width: 300,
-                    decoration: BoxDecoration(
-                        color: Colors.grey.shade900,
-                        borderRadius: BorderRadius.circular(20)),
-                    child: Center(
-                      child: Text('PDF-Upload', style: TextStyle(color: Colors.deepOrange.shade700, fontSize: 30), ),
+                    ListTile(
+                      title: Container(
+                        height: 150,
+                        width: 150,
+                      decoration: BoxDecoration(
+                          color: Colors.purple.shade900,
+                          borderRadius: BorderRadius.circular(20),
+                          border: Border.all(color: Color(0xff13002c), width: 2.0),
+                          ),
+                      child: Center(
+                          child: Text('PDF-Upload', style: TextStyle(color:Color(0xff13002c), fontSize: 40), ),
+                        ),
+                      ),
+                      contentPadding: EdgeInsets.fromLTRB(35, 25, 35, 100),
+                      onTap: task3,
                     ),
-                  ),
-                  contentPadding: EdgeInsets.fromLTRB(20, 25, 20, 100),
-                  onTap: task3,
-                ),
 
-              ],
+                  ],
+               ),
+
+              decoration: BoxDecoration(
+                image: new DecorationImage(image: new AssetImage('images/aural.png'), fit: BoxFit.cover),
+                ),
             ),
 
       )

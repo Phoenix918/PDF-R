@@ -14,57 +14,77 @@ output({var f = 0, var x}) async
     home: Scaffold(
       backgroundColor: Colors.grey.shade800,
         appBar: AppBar(
-          leading: IconButton(icon: Icon(Icons.arrow_back, color: Colors.deepOrange.shade700, ), onPressed: task3),
-          backgroundColor: Colors.grey.shade900,
-          title: Center(child: Text('PDF-R : Search', style: TextStyle(color: Colors.deepOrange.shade700), )),
-          actions: <Widget>[IconButton(icon: Icon(Icons.cached, color: Colors.deepOrange.shade700, ), onPressed: task3)],
+          leading: IconButton(icon: Icon(Icons.arrow_back, color: Color(0xff5e27a4), ), onPressed: task3),
+          backgroundColor: Color(0xff280a50),
+          title: Center(child: Text('PDF-R : Search', style: TextStyle(color: Color(0xff5e27a4)), )),
+          actions: <Widget>[IconButton(icon: Icon(Icons.cached, color: Color(0xff5e27a4), ), onPressed: task3)],
         ),
           
-      body: Center(
-        child:Container(
-          height: 200, width: 350,
-          decoration: BoxDecoration(color: Colors.grey.shade700, borderRadius: BorderRadius.circular(20)),
-            child:Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: <Widget>[
-                    Container(
-                      height: 50, width: 300, 
-                        color: Colors.grey.shade900, 
-                         child: Card(
-                          color: Colors.grey.shade900,
-                          child: TextField(
-                            onChanged: (val){ 
-                              print(val); 
-                            },
+      body: Container(
+        height: double.infinity, width: double.infinity,
 
-                            decoration: InputDecoration(
-                              hintText: 'Type in PDF name', 
-                              hintStyle: TextStyle(color: Colors.deepOrange.shade900, fontSize: 20), 
-                            ),
-                            cursorColor: Colors.deepOrange.shade700,
-                            textAlign: TextAlign.center,
-                            style: TextStyle(color: Colors.deepOrange.shade700, fontSize: 20),
-                                  
-                          ),
-                        )
-                    ),
+        decoration: BoxDecoration(
+                image: new DecorationImage(image: new AssetImage('images/aural.png'), fit: BoxFit.cover),
+                ),
 
-                    FlatButton(
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
-                      color: Colors.grey.shade900, 
-                      onPressed: () => output(f: f,x: x), 
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: <Widget>[ 
-                        Icon(Icons.check_circle_outline, color: Colors.deepOrange.shade700,), 
-                        Text('Submit',style: TextStyle(color: Colors.deepOrange.shade700, fontSize: 20)) ],
-                      )
-                    ),
+        child: Center(
+          child:Container(
+            height: 200, width: 350,
 
-                  ],
+            decoration: BoxDecoration(
+              color: Colors.purple.shade900, 
+              borderRadius: BorderRadius.circular(20),
+              border: Border.all(color: Color(0xff13002c), width: 2.0),
               ),
-            ),
+
+              child:Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      Container(
+                        height: 50, width: 300,
+
+                          decoration: BoxDecoration(
+                            color: Color(0xff280a50),
+                            borderRadius: BorderRadius.circular(15)
+                          ),
+
+                           child: Card(
+                             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
+                             color: Color(0xff280a50),
+                             child: TextField(
+                              onChanged: (val){ 
+                                print(val); 
+                              },
+
+                              decoration: InputDecoration(
+                                hintText: 'Type in PDF name', 
+                                hintStyle: TextStyle(color: Color(0xff5e27a4), fontSize: 20), 
+                              ),
+                              cursorColor: Color(0xff5e27a4),
+                              textAlign: TextAlign.center,
+                              style: TextStyle(color: Color(0xff5e27a4), fontSize: 20),
+                                    
+                             ),
+                           )
+                      ),
+
+                      FlatButton(
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
+                        color: Color(0xff280a50), 
+                        onPressed: () => output(f: f,x: x), 
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: <Widget>[ 
+                          Icon(Icons.check_circle_outline, color: Color(0xff5e27a4),), 
+                          Text('Submit',style: TextStyle(color: Color(0xff5e27a4), fontSize: 20)) ],
+                        )
+                      ),
+
+                    ],
+                ),
+              ),
+          ),
         ),
       ),
     )
